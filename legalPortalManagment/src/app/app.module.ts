@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { UserModule } from './user/user.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,  
+    UserModule
     
   ],
   providers: [],
