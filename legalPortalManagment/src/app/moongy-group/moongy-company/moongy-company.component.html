@@ -1,9 +1,10 @@
 <div class="moongy-company">
-  <header>
-    <h1>{{ companyName }}</h1>
+  <header class="moongy-header">
+    <h1 class="moongy-header-h1">{{ companyName }}</h1>
   </header>
-  <!-- Esse é o conteúdo principal da nossa página -->
-  <main>
-    <div class="img"></div>
+  <!-- Esse é o conteúdo principal da nossa página que receberá i imagem da DB -->
+  <main>    
+    <div class="img" [style.background-image]="'url(' + serverImage + ')'" ></div>
+
   </main>
 </div>
