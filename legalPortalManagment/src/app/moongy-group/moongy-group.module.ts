@@ -12,4 +12,4 @@ import { UserComponent } from './moongy-company/moongy-user/user.component';
     CommonModule
   ]
 })
-export class UserModule { }
+export class MoongyGroupModule { }

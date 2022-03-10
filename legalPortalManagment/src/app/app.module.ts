@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ApplientsModule } from './applients/applients.module';
-import { UserModule } from './moongy-group/user.module';
+import { MoongyGroupModule } from './moongy-group/moongy-group.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { UserModule } from './moongy-group/user.module';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,  
-    UserModule,
+    MoongyGroupModule,
     ApplientsModule
     
   ],
