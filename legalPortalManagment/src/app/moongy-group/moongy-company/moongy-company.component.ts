@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./moongy-company.component.css']
 })
 export class MoongyCompanyComponent implements OnInit {
-
+   companyName:string = 'Adentis';
   constructor() { }
 
   ngOnInit(): void {

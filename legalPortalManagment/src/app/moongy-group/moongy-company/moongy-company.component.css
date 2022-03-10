@@ -1,0 +1,17 @@
+.moongy-company{
+    
+}
+
+
+.img { 
+  width: 100%;
+  height: 700px;
+  position: relative;
+  
+  background-image: url(../../../assets/images/moongyAdentis.png) !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
