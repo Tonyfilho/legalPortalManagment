@@ -21,8 +21,9 @@ span {
   font-size: 3rem;
 }
 .name-product {
-  font-family: 'Roboto', sans-serif;
-  font-family: 'Sansita Swashed', cursive !important;
+  font-family: "Lexend Peta", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
+  font-family: "Sansita Swashed", cursive !important;
   color: rgb(2, 2, 2);
   font-size: 1.5rem;
   font-weight: normal;
@@ -32,13 +33,12 @@ span {
   font-size: 2.5rem;
 }
 .wrapper {
-  margin-top: 1%;
-  width: 100%;  
-  height: 51em;
-  position: fixed;  
+  margin-top: 3%;
+  width: 100%;
+  height: 50em;
+  position: fixed;
   background-position: center;
   background-size: cover;
-
 }
 .footer-img {
   background-image: url(../../../assets/images/moongyfooter.png) !important;

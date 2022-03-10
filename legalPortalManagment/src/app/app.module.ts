@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { ApplientsModule } from './applients/applients.module';
 import { MoongyGroupModule } from './moongy-group/moongy-group.module';
@@ -26,7 +27,8 @@ import { MoongyGroupModule } from './moongy-group/moongy-group.module';
     MoongyGroupModule,
     ApplientsModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

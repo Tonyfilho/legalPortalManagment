@@ -1,23 +1,21 @@
-
-.moongy-header{
+.moongy-header {
   position: absolute;
-  margin-top:2%;
+  margin-top: 2%;
   padding: 1.5%;
 }
-.moongy-header-h1{
+.moongy-header-h1 {
+  font-family: "Lexend Peta", sans-serif !important;
   font-family: "Roboto", sans-serif !important;
+  font-family: "Sansita Swashed", cursive !important;
   color: rgb(2, 2, 2);
   font-size: 3rem;
 }
 
-
 .img {
-  margin-top:3%;
+  margin-top: 1%;
   width: 100%;
   height: 51em;
-  
+
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
-
