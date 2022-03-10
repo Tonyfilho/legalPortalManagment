@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserComponent } from './user/user.component';
+import { UserComponent } from './moongy-company/moongy-user/user.component';
 
 
 

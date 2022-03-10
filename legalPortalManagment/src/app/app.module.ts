@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ApplientsModule } from './applients/applients.module';
-import { UserModule } from './user/user.module';
+import { UserModule } from './moongy-group/user.module';
 
 @NgModule({
   declarations: [
