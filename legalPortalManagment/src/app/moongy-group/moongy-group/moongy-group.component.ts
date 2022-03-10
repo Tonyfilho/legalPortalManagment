@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./moongy-group.component.css']
 })
 export class MoongyGroupComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {

@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+
 import { ApplientsModule } from './applients/applients.module';
 import { MoongyGroupModule } from './moongy-group/moongy-group.module';
 
@@ -21,8 +24,9 @@ import { MoongyGroupModule } from './moongy-group/moongy-group.module';
     HttpClientModule,
     ReactiveFormsModule,  
     MoongyGroupModule,
-    ApplientsModule
-    
+    ApplientsModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
