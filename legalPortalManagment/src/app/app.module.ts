@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ApplientsModule } from './applients/applients.module';
 import { UserModule } from './user/user.module';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { UserModule } from './user/user.module';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,  
-    UserModule
+    UserModule,
+    ApplientsModule
     
   ],
   providers: [],
