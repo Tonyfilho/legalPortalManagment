@@ -29,7 +29,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   ],
   exports:[
     MoongyGroupComponent,
-    MoongyCompanyComponent
+    MoongyCompanyComponent, 
+    UserComponent
   ]
 })
 export class MoongyGroupModule { }

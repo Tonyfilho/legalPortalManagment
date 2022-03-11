@@ -11,12 +11,19 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import { ApplientsModule } from './applients/applients.module';
+import { ApplientsComponent } from '../app/applients/applients/applients.component';
+import { ApplientComponent } from '../app/applients/applient/applient.component';
+import { AddApplientComponent } from '../app/applients/add-applient/add-applient.component';
+
+
 import { MoongyGroupModule } from './moongy-group/moongy-group.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ApplientsComponent,
+    ApplientComponent,
+    AddApplientComponent
   ],
   imports: [
     BrowserModule,
@@ -24,8 +31,7 @@ import { MoongyGroupModule } from './moongy-group/moongy-group.module';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,  
-    MoongyGroupModule,
-    ApplientsModule,
+    MoongyGroupModule,    
     MatToolbarModule,
     MatIconModule,
     MatTabsModule,
