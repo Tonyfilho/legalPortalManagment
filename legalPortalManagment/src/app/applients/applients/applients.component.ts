@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-applients',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./applients.component.css']
 })
 export class ApplientsComponent implements OnInit {
-
-  constructor() { }
+  applients: any[]= [];
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }

@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { ApplientsComponent } from '../app/applients/applients/applients.component';
 import { ApplientComponent } from '../app/applients/applient/applient.component';
@@ -37,6 +38,7 @@ import { AboutComponent } from './about/about.component';
     MatToolbarModule,
     MatIconModule,
     MatTabsModule,
+    MatFormFieldModule
     
   ],
   providers: [],
