@@ -28,7 +28,8 @@ import { MoongyGroupModule } from './moongy-group/moongy-group.module';
     ApplientsModule,
     MatToolbarModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

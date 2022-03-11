@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoongyCompanyComponent implements OnInit {
    companyName:string = 'Adentis';
+   companyUser:string = 'Andre';
    serverImage:string = '../../../assets/images/moongyAdentis.png'; //esta imagem virá de forma dinamica da DB;
   constructor() { }
 

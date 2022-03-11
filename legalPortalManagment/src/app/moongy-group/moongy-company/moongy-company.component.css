@@ -10,6 +10,13 @@
   color: rgb(2, 2, 2);
   font-size: 3rem;
 }
+.moongy-header-h3{
+  font-family: "Lexend Peta", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
+  font-family: "Sansita Swashed", cursive !important;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+}
 
 .img {
   margin-top: 1%;

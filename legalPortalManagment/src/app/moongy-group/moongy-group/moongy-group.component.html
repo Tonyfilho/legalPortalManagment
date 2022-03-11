@@ -1,25 +1,43 @@
+
 <mat-toolbar class="navbar">
   <div>
     <span class="name name-company">moOngy.</span>
     <span class="name name-product">Legal Portal Managment</span>
   </div>
-  <div>
-    <span ><a href="">List of Applients</a> </span>
-    <span ><a href="">New Applient </a> </span>
-    <span ><a href="">About</a> </span>
-    
+  <div mat-tab-nav-bar class="navbar-div">
+    <span class="navbar-div-span"><a class="navbar-a" mat-tab-link routerLink="/applients">List of Applients</a> </span>
+    <span class="navbar-div-span"><a class="navbar-a" mat-tab-link routerLink="/add-applient">New Applient </a> </span>
+    <span class="navbar-div-span"><a class="navbar-a" mat-tab-link routerLink="/about">About</a> </span>
+    <span class="navbar-div-span"><a class="navbar-a" mat-tab-link routerLink="/user">Login</a> </span>
   </div>
-  <div>
-    <span class="material-icons"><a href="https://moongy.group/pt/" target="_blank">home</a> </span>
-    <span class="material-icons"><a href="https://moongy.group/pt/as-nossas-empresas/" target="_blank">groups</a> </span>
-    <span class="material-icons"><a href="https://moongy.group/pt/contacte-nos/" target="_blank">contact_phone</a> </span>
-    <span class="material-icons"><a routerLink="/user"  >account_circle</a> </span>
+ 
+  <div mat-tab-nav-bar>
+    
+    <span class="material-icons"><a  href="https://moongy.group/pt/" target="_blank">home</a> </span>
+    <span class="material-icons"><a  href="https://moongy.group/pt/as-nossas-empresas/" target="_blank">groups</a> </span>
+    <span class="material-icons"><a  href="https://moongy.group/pt/contacte-nos/" target="_blank">contact_phone</a> </span>
   </div>
 </mat-toolbar>
-<body class="wrapper">  
+<body class="wrapper">
   <!-- chamando o compoment moong-company -->
   <app-moongy-company></app-moongy-company>
 </body>
 <footer>
   <div class="footer-img"></div>
 </footer>
+
+
+ <!-- <ul mat-tab-nav-bar>
+    <li mat-tab-link routerLink="/user" class="material-icons2">
+      <span class="material-icons"> account_circle </span>
+    </li>
+    <li mat-tab-link >
+      <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
+    </li>
+    <li mat-tab-link routerLink="/user" class="material-icons2">
+      <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
+    </li>
+    <li mat-tab-link routerLink="/user" class="material-icons2">
+      <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
+    </li>
+  </ul> -->
