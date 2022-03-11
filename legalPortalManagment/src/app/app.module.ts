@@ -17,13 +17,15 @@ import { AddApplientComponent } from '../app/applients/add-applient/add-applient
 
 
 import { MoongyGroupModule } from './moongy-group/moongy-group.module';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ApplientsComponent,
     ApplientComponent,
-    AddApplientComponent
+    AddApplientComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

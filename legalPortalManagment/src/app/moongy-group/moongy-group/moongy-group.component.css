@@ -39,12 +39,9 @@ span {
   font-size: 1.8rem;
 }
 .wrapper {
-  margin-top: 3%;
-  width: 100%;
-  height: 50em;
-  position: fixed;
-  background-position: center;
-  background-size: cover;
+   margin-top: 4%;
+  width: 100%;  
+ 
 }
 .footer-img {
   background-image: url(../../../assets/images/moongyfooter.png) !important;

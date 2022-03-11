@@ -1,14 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ApplientsComponent } from '../app/applients/applients/applients.component';
+import { ApplientsComponent } from './applients/applients/applients.component';
+import { ApplientComponent } from './applients/applient/applient.component';
 
 import { UserComponent } from './moongy-group/moongy-user/user.component';
+import { AddApplientComponent } from './applients/add-applient/add-applient.component';
+import { AboutComponent } from './about/about.component';
+import { MoongyCompanyComponent } from './moongy-group/moongy-company/moongy-company.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/', pathMatch: 'full'},
+  {path: '', redirectTo: '/legalPortalManagment', pathMatch: 'full'},
+  {path: 'legalPortalManagment', component: MoongyCompanyComponent },
   {path: 'applients', component: ApplientsComponent  },
-  {path: 'user', component: UserComponent},
+  {path: 'applients/:id', component: ApplientComponent  },
+  {path: 'add-applient', component: AddApplientComponent  },
+  {path: 'about', component:  AboutComponent },  
+  {path: 'login', component: UserComponent},
+  {path: '**', redirectTo: 'legalPortalManagment'},
 ];
 
 @NgModule({
