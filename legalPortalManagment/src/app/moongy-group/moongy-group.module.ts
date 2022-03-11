@@ -10,6 +10,7 @@ import { MoongyGroupComponent } from './moongy-group/moongy-group.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -25,7 +26,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatToolbarModule, 
     MatIconModule,
     MatTabsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    RouterModule
   ],
   exports:[
     MoongyGroupComponent,
