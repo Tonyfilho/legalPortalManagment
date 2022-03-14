@@ -12,7 +12,7 @@ import { IApplientClass } from 'src/assets/class/appient';
 export class ApplientsComponent implements OnInit {
   applients: any[]= [];  
 
-  displayedColumns = ['id', 'name', 'progress', 'color'];
+  displayedColumns = ['id', 'NomeCompleto', 'Email', 'Telemovel', 'Nacionalidade', 'DataDeEntrada'];
   dataSource: MatTableDataSource<IApplientClass>;
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;

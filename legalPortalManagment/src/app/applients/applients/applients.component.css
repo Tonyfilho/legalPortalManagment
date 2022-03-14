@@ -1,24 +1,35 @@
 .main {
-    margin-top:7% !important;
+  width: 100%;
+  /* margin-top: 6% !important; */
+  /* margin-top: 6% !important; */
 }
 
-.example-container {
-    display: flex;
-    flex-direction: column;
-    min-width: 300px;
-  }
-  
-  .example-header {
-    min-height: 64px;
-    padding: 8px 24px 0;
-  }
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  .mat-table {
-    overflow: auto;
-    max-height: 500px;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.filter {
+  /* margin-top: 6% !important; */
+  width: 100%;
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.mat-paginator{
+  width: 100%;
+  min-width: 300px;
+  bottom: 0;
+  position: fixed;
+}
