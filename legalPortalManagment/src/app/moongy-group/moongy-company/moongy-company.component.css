@@ -6,6 +6,7 @@
 }
 .moongy-header {
   margin: 0 auto;  
+  object-fit: contain;  
   width: 20em;
   height: 20em;
   position: absolute;
@@ -32,8 +33,9 @@
 .img {   
    margin-top: 5.5em;
   width: 100%; 
-  height: 73%; 
-  position: fixed;
+  /* height: 73%;  */
+  height: 62%; 
+  position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: contain;  
