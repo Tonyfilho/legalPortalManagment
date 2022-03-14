@@ -43,11 +43,15 @@
 
 
 
-/* 
- position: relative;
-    background: #fc0;
-    width: 400px; /* ajuste a largura 
-    height: 500px; /* ajuste a altura 
-    margin: 0 auto; /* alinha a div no centro 
-    top: -35px; /*CONTROLE AQUI A DISTANCIA
-    */
+.wrapper > { 
+  width: 100%;
+  height:72%;  
+}
+.footer-img {
+  background-image: url(../../../assets/images/moongyfooter.png) !important;
+  width: 100%;
+  height: 10rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

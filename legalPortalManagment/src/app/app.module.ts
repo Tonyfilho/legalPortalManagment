@@ -11,6 +11,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { ApplientsComponent } from '../app/applients/applients/applients.component';
 import { ApplientComponent } from '../app/applients/applient/applient.component';
@@ -38,7 +40,9 @@ import { AboutComponent } from './about/about.component';
     MatToolbarModule,
     MatIconModule,
     MatTabsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTableModule,
+    MatPaginatorModule
     
   ],
   providers: [],
