@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, take } from 'rxjs';
-import { IApplientClass } from 'src/assets/class/appient';
+import { IApplientClass } from 'src/assets/interfaces/appient';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,8 @@ export class ApplientsService {
   private localId = new BehaviorSubject<number>(0);
   serviceIdReturn = this.localId.asObservable();
   
-  applients:IApplientClass[] = [];
+  
+  applients:Observable<IApplientClass>[] = [];
 
 
   constructor(private httpClient: HttpClient) {}
@@ -20,13 +21,13 @@ export class ApplientsService {
     const localApplients = this.httpClient.get(
       `https://jsonplaceholder.typicode.com/users`
     ); //URL dummy para testar sucess or error
-    return localApplients.pipe(take(1)) && this.applients;
+    return localApplients.pipe(take(1));
   }
   getApplientById(id: number) {
     const localApplients = this.httpClient.get(
       `https://jsonplaceholder.typicode.com/users/${id}`
     ); //URL dummy para testar sucess or error
-    return localApplients.pipe(take(1))  && this.applients[id].id;
+    return localApplients.pipe(take(1));
   }
 
   getId(id: number): void {
@@ -35,7 +36,7 @@ export class ApplientsService {
   }
 
   postUser(applient: IApplientClass) {
-    this.applients.push(applient);
+    // this.applients.push(applient)
     return this.httpClient.post(
       `https://httpbin.org/post`, //URL dummy para testar sucess or error
       JSON.stringify(applient)

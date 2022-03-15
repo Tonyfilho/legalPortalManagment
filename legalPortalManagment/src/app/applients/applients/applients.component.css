@@ -11,10 +11,14 @@
 }
 
 .filter {
-  /* margin-top: 6% !important; */
+  margin-top: 5% !important;
   width: 100%;
   min-height: 64px;
-  padding: 8px 24px 0;
+  padding: 0.5rem 1.2rem 0;
+  background-color: #424242 !important;
+  background-size: cover !important;
+  object-fit: contain !important;  
+  
 }
 
 .mat-form-field {
