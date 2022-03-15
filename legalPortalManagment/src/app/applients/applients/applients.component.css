@@ -1,24 +1,24 @@
 .main {
   width: 100%;
-  /* margin-top: 6% !important; */
-  /* margin-top: 6% !important; */
+  height: auto;
+  margin-top: 5% !important;
+  object-fit: contain !important;
+
 }
 
 .container {
   display: flex;
   flex-direction: column;
- 
 }
 
 .filter {
-  margin-top: 5% !important;
+  /* margin-top: 5% !important; */
   width: 100%;
   min-height: 64px;
   padding: 0.5rem 1.2rem 0;
   background-color: #424242 !important;
   background-size: cover !important;
-  object-fit: contain !important;  
-  
+  object-fit: contain !important;
 }
 
 .mat-form-field {
@@ -31,9 +31,9 @@
   max-height: 500px;
 }
 
-.mat-paginator{
+.mat-paginator {
   width: 100%;
   min-width: 300px;
-  bottom: 0;
-  position: fixed;
+  /* bottom: 0;
+  position: fixed; */
 }
