@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/legalPortalManagment', pathMatch: 'full'},
   {path: 'legalPortalManagment', component: MoongyCompanyComponent },
   {path: 'applients', component: ApplientsComponent  },
-  {path: 'applients/:id', component: ApplientComponent  },
+  {path: 'applient/:id', component: ApplientComponent  },
   {path: 'add-applient', component: AddApplientComponent  },
   {path: 'about', component:  AboutComponent },  
   {path: 'login', component: UserComponent},
