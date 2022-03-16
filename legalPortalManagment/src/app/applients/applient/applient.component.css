@@ -1,3 +1,25 @@
-.main {
-    margin-top:4%
+.main{
+   width: 100%;
+   padding: 0% 1%;
+   background-color: aliceblue;
 }
+
+mat-form-field{
+    background: rgba(0, 0, 0, .2) !important;
+    margin-top:6.5%,
+}
+
+.example-form {
+    min-width: 150px;
+    /* max-width: 1000px; */
+    width: 98%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 0.1rem;
+  }
+  

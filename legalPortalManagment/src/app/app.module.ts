@@ -14,6 +14,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
+
 
 import { ApplientsComponent } from '../app/applients/applients/applients.component';
 import { ApplientComponent } from '../app/applients/applient/applient.component';
@@ -44,7 +46,8 @@ import { AboutComponent } from './about/about.component';
     MatFormFieldModule,
     MatTableModule,
     MatPaginatorModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
     
   ],
   providers: [],
