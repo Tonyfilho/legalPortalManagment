@@ -1,19 +1,110 @@
 <div class="main">
   <form class="example-form">
     <!-- 1º coluna  to ROOF-->
-    <mat-grid-list  cols="4"  rowHeight="5rem" >
+    <mat-grid-list cols="4" rowHeight="5rem">
       <mat-grid-tile colspan="4"> </mat-grid-tile>
     </mat-grid-list>
     <!-- 1º Grid  nome e data de admissão -->
-    <mat-grid-list  cols="4" rowHeight="fit" gutterSize="1px" style="height:3.5rem" >
-      <mat-grid-tile  colspan="3" >
-        <mat-form-field style="background-color: aliceblue">
+    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1px">
+      <mat-grid-tile colspan="3">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          color="primary"
+          style="width: 100%"
+        >
           <mat-label>Nome Completo:</mat-label>
-          <input matInput />  </mat-form-field
+          <input matInput /> </mat-form-field
       ></mat-grid-tile>
-      <mat-grid-tile  colspan="1">
-        <mat-form-field >
+      <mat-grid-tile colspan="1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          color="primary"
+          style="width: 100%"
+        >
           <mat-label>Data de Admissão:</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <!-- 2º Grid  nome e data de admissão -->
+    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1px">
+      <mat-grid-tile colspan="1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          color="primary"
+          style="width: 100%"
+        >
+          <mat-label>Email:</mat-label>
+          <input matInput /> </mat-form-field
+      ></mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          color="primary"
+          style="width: 100%"
+        >
+          <mat-label>Telemovel:</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          color="primary"
+          style="width: 100%"
+        >
+          <mat-label>Naturalidade:</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          color="primary"
+          style="width: 100%"
+        >
+          <mat-label>Nacionalidade:</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <!-- 3º Grid  nome e data de admissão -->
+    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1px">
+      <mat-grid-tile colspan="2">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          color="primary"
+          style="width: 100%"
+        >
+          <mat-label>Morada Completo</mat-label>
+          <input matInput /> </mat-form-field
+      ></mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          color="primary"
+          style="width: 100%"
+        >
+          <mat-label>Código Postal:</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="fill"
+          color="primary"
+          style="width: 100%"
+        >
+          <mat-label>Localidade:</mat-label>
           <input matInput />
         </mat-form-field>
       </mat-grid-tile>
