@@ -1,17 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .main{
-   width: 100%;
-   padding: 0% 1%;
-   background-color: aliceblue;
+   width: 100%; 
+   background-color:rgb(10, 0, 0) !important;
 }
 
-mat-form-field{
+
+mat-grid-tile {
+  border: 1px solid black !important;
+}
+/* .mat-grid-tile-content{
+  height: 20%!important;
+  background-color: rgb(255, 0, 200) !important;
+} */
+
+/* mat-form-field{
     background: rgba(0, 0, 0, .2) !important;
     margin-top:6.5%,
 }
 
 .example-form {
     min-width: 150px;
-    /* max-width: 1000px; */
+  
     width: 98%;
   }
   
@@ -22,4 +34,4 @@ mat-form-field{
   td {
     padding-right: 0.1rem;
   }
-  
+   */

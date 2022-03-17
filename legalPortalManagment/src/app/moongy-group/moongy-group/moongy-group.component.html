@@ -1,39 +1,41 @@
-<mat-toolbar class="navbar">
-
-  <div>
-   <a [routerLink]="['/']" > <span class="name name-company">moOngy.</span></a>
-    <span class="name name-product">Legal Portal Managment</span>
-  </div>
-  
-  <div  class="navbar-div">
-    <span class="navbar-div-span"><a class="navbar-a"  [routerLink]="['/applients']">List of Applients</a> </span>
-    <span class="navbar-div-span"><a class="navbar-a"  [routerLink]="['/add-applient']">New Applient </a> </span>
-    <span class="navbar-div-span"><a class="navbar-a"  [routerLink]="['/about']">About</a> </span>
-    <span class="navbar-div-span"><a class="navbar-a"  [routerLink]="['/login']">Login</a> </span>
-  </div>
-
-
-  <div mat-tab-nav-bar>
-    <span class="material-icons"
-      ><a href="https://moongy.group/pt/" target="_blank">home</a>
-    </span>
-    <span class="material-icons"
-      ><a href="https://moongy.group/pt/as-nossas-empresas/" target="_blank"
-        >groups</a
+<div class="main">
+  <mat-toolbar class="navbar">
+    <div>
+      <a [routerLink]="['/']">
+        <span class="name name-company">moOngy.</span></a
       >
-    </span>
-    <span class="material-icons"
-      ><a href="https://moongy.group/pt/contacte-nos/" target="_blank"
-        >contact_phone</a
-      >
-    </span>
-  </div>
-</mat-toolbar>
-<!-- <div class="wrapper"> -->
-  <!-- aqui carrega o conteudo via routerLink das paginas -->
-<!-- </div> -->
-<!-- <footer>
-  <div class="footer-img"></div>
-</footer> -->
+      <span class="name name-product">Legal Portal Managment</span>
+    </div>
 
+    <div class="navbar-div">
+      <span class="navbar-div-span"
+        ><a class="navbar-a" [routerLink]="['/applients']">List of Applients</a>
+      </span>
+      <span class="navbar-div-span"
+        ><a class="navbar-a" [routerLink]="['/add-applient']">New Applient </a>
+      </span>
+      <span class="navbar-div-span"
+        ><a class="navbar-a" [routerLink]="['/about']">About</a>
+      </span>
+      <span class="navbar-div-span"
+        ><a class="navbar-a" [routerLink]="['/login']">Login</a>
+      </span>
+    </div>
 
+    <div mat-tab-nav-bar>
+      <span class="material-icons"
+        ><a href="https://moongy.group/pt/" target="_blank">home</a>
+      </span>
+      <span class="material-icons"
+        ><a href="https://moongy.group/pt/as-nossas-empresas/" target="_blank"
+          >groups</a
+        >
+      </span>
+      <span class="material-icons"
+        ><a href="https://moongy.group/pt/contacte-nos/" target="_blank"
+          >contact_phone</a
+        >
+      </span>
+    </div>
+  </mat-toolbar>
+</div>

@@ -15,6 +15,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 import { ApplientsComponent } from '../app/applients/applients/applients.component';
@@ -47,7 +48,9 @@ import { AboutComponent } from './about/about.component';
     MatTableModule,
     MatPaginatorModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule
+    
     
   ],
   providers: [],

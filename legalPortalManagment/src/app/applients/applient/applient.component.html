@@ -1,208 +1,22 @@
 <div class="main">
   <form class="example-form">
-    <!-- 1º coluna  nome e data de admissão -->
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width name" appearance="fill">
-            <mat-label>Nome Completo</mat-label>
-            <input matInput disabled value />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field
-            class="example-full-width admission-date"
-            appearance="fill"
-          >
-            <mat-label>Data de Admissão</mat-label>
-            <input matInput disabled value />
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-    <!-- 2º coluna  contatos pessoais -->
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Email Pessoal</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Telemóvel</mat-label>
-            <input matInput placeholder="Ex. California" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Data de Nascimento</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-    <!-- 3º coluna  morada codigo postal  -->
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Morada Completa</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Codigo Postal</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-    <!-- 4º coluna  morada e naturalidade nascionalidade  -->
-    <table class="example-full-width" cellspacing="0">
-      <tr>       
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Localidade</mat-label>
-            <input matInput placeholder="Ex. California" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Naturalidade</mat-label>
-            <input matInput placeholder="Ex. California" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Nacionalidade</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>    
-      </tr>
-    </table>
-    <!-- 5º coluna contacto de emergencia -->
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Nome do Contacto de Emergencia</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Telemóvel do Contacto de Emergencia</mat-label>
-            <input matInput placeholder="Ex. California" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Grau de Parentesco do Contacto de Emergencia</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-    <!-- 6º B.I C.C e outros -->
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Nº B.I ou C.C</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Validade do B.I ou C.C</mat-label>
-            <input matInput placeholder="Ex. California" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Local de Emissão do B.I ou C.C </mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-    <!-- 7º NEU CC etc -->
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>NEU Nº AR/IE(Identificação Estrangeira)</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Validade da AR/IE</mat-label>
-            <input matInput placeholder="Ex. California" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Date de Emissão da AR/IE </mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-    <!-- 8º PASSAPORTE CC etc -->
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>NEU Nº Passaporte</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Validade do Passaporte</mat-label>
-            <input matInput placeholder="Ex. California" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Date da Expedição do Passaporte </mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-    <!-- 9º PASSAPORTE CC etc -->
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Nº do Contribuinte</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Nº Segurança Social</mat-label>
-            <input matInput placeholder="Ex. California" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Estado Civil </mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Numero de Dependentes</mat-label>
-            <input matInput />
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
+    <!-- 1º coluna  to ROOF-->
+    <mat-grid-list  cols="4"  rowHeight="5rem" >
+      <mat-grid-tile colspan="4"> </mat-grid-tile>
+    </mat-grid-list>
+    <!-- 1º Grid  nome e data de admissão -->
+    <mat-grid-list  cols="4" rowHeight="fit" gutterSize="1px" style="height:3.5rem" >
+      <mat-grid-tile  colspan="3" >
+        <mat-form-field style="background-color: aliceblue">
+          <mat-label>Nome Completo:</mat-label>
+          <input matInput />  </mat-form-field
+      ></mat-grid-tile>
+      <mat-grid-tile  colspan="1">
+        <mat-form-field >
+          <mat-label>Data de Admissão:</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
   </form>
 </div>
