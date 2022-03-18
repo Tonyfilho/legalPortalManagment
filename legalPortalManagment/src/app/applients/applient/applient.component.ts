@@ -32,10 +32,12 @@ export class ApplientComponent implements OnInit, OnChanges {
     this.applientForm = this.fb.group({
       name: [],
       email: [],
-      admissionDate: [this.selectedAdmissionDate],
+      admissionDate: [],
       birthDate:[],
       phone: [],
-      country:[this.selectedCountryName]
+      country:[this.selectedCountryName],
+      naturalness:[],
+      nationality:[]
     });
   }
   ngOnChanges(changes: SimpleChanges): void {

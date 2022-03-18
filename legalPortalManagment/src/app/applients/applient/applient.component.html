@@ -47,7 +47,7 @@
           style="width: 100%"
         >
           <mat-label>Data de Admissão</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="admissionDate" [value]="picker" (value)="selectedAdmissionDate" />
+          <input matInput [matDatepicker]="picker" formControlName="admissionDate" />
           <mat-datepicker-toggle
             matSuffix
             [for]="picker"
@@ -55,6 +55,7 @@
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>        
       </mat-grid-tile>
+    
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -63,15 +64,15 @@
           style="width: 100%"
         >         
           <mat-label>Pais</mat-label>
-          <mat-select>
+          <mat-select  [(value)]="selectedCountryName" formControlName="country">
             <mat-option>none</mat-option>
-            <mat-option *ngFor="let pais of countriesName" [value]="pais" [(value)]="selectedCountryName">
+            <mat-option *ngFor="let pais of countriesName" [value]="pais" >
               {{pais}}
             </mat-option>
           </mat-select>
            </mat-form-field
       ></mat-grid-tile>
-      
+      <!-- {{ selectedCountryName }} -->
     </mat-grid-list>
     <!-- 2º Grid  Data de Nascimento Email: Telemovel: Naturalidade ....: -->
     <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1.5em">
@@ -96,7 +97,7 @@
           style="width: 100%"
         >
         <mat-label>Enter your email</mat-label>
-        <input matInput placeholder="seuEmail@example.com" formControlName="phone">
+        <input matInput placeholder="seuEmail@example.com" formControlName="email">
         <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
            </mat-form-field
       ></mat-grid-tile>
@@ -121,7 +122,7 @@
           style="width: 100%"
         >
           <mat-label>Naturalidade:</mat-label>
-          <input matInput />
+          <input matInput formControlName="naturalness" />
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="1">
@@ -132,7 +133,7 @@
           style="width: 100%"
         >
           <mat-label>Nacionalidade:</mat-label>
-          <input matInput />
+          <input matInput formControlName="nationality" />
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>
