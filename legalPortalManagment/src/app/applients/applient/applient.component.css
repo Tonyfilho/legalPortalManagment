@@ -5,39 +5,12 @@
 .main{
    width: 100%; 
    /* color:rgb(202, 191, 191);*/
-   background-color:rgba(0, 0, 0, 1) !important; 
+   /* background-color:rgba(0, 0, 0, 1) !important;  */
 }
 
 mat-form-field{
   margin: 0;
   padding: 0;
 }
-/* .mat-form-field-appearance-outline .mat-form-field-outline-thick {
-  color: black !important;
-} */
-/* ::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
-  background-color: black !important;
-} */
 
-/** Overrides underline color **/
-/* .my-form-field.mat-form-field-appearance-legacy .mat-form-field-underline,
-.my-form-field.mat-form-field-appearance-legacy .mat-form-field-ripple,
-.my-form-field.mat-form-field-appearance-legacy.mat-focused
-    .mat-form-field-underline,
-.my-form-field.mat-form-field-appearance-legacy.mat-focused
-    .mat-form-field-ripple {
-    background-color: rgb(22, 22, 22) !important;;
-} */
 
-/** Overrides label color **/
-/* .my-form-field.mat-form-field-appearance-legacy .mat-form-field-label,
-.my-form-field.mat-form-field-appearance-legacy.mat-focused
-    .mat-form-field-label {
-    color: rgb(26, 25, 25) !important;;
-} */
-
-/** Overrides caret & text color **/
-/* .my-form-field.mat-form-field-appearance-legacy .mat-input-element {
-    caret-color: rgb(29, 27, 27) !important;
-  color: rgb(26, 24, 24) !important;;
-} */
