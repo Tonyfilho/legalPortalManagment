@@ -1,5 +1,5 @@
 <div class="main">
-  <form class="form">
+  <form class="form" [formGroup]="applientForm">
     <!-- 0º coluna  to ROOF-->
     <mat-grid-list cols="1" rowHeight="4rem"></mat-grid-list>
     <!-- toolBar -->
@@ -61,12 +61,10 @@
           appearance="outline"
           color="primary"
           style="width: 100%"
-        >
-          <!-- <mat-label>Pais:</mat-label>
-          <input matInput /> -->
+        >         
           <mat-label>Pais</mat-label>
           <mat-select>
-            <mat-option *ngFor="let pais of countriesName" [value]="pais">
+            <mat-option *ngFor="let pais of countriesName" [value]="pais" [(value)]="selectedCountryName">
               {{pais}}
             </mat-option>
           </mat-select>
@@ -82,9 +80,7 @@
           appearance="outline"
           color="primary"
           style="width: 100%"
-        >
-          <!-- <mat-label>Data de Nascimento:</mat-label>
-          <input matInput /> -->
+        >          
           <mat-label>Data de Nascimento</mat-label>
           <input matInput [matDatepicker]="birthDay">
           <mat-datepicker-toggle matSuffix [for]="birthDay"></mat-datepicker-toggle>
@@ -98,8 +94,10 @@
           color="primary"
           style="width: 100%"
         >
-          <mat-label>Email:</mat-label>
-          <input matInput /> </mat-form-field
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="seuEmail@example.com" formControlName="phone">
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+           </mat-form-field
       ></mat-grid-tile>
       <mat-grid-tile colspan="1">
         <mat-form-field
@@ -107,9 +105,11 @@
           appearance="outline"
           color="primary"
           style="width: 100%"
-        >
-          <mat-label>Telemovel:</mat-label>
-          <input matInput />
+        >          
+          <mat-label>Telemovel</mat-label>         
+          <input matInput formControlName="phone" />
+          <mat-icon matSuffix>phone</mat-icon>
+          <mat-hint>Include area code</mat-hint>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="1">

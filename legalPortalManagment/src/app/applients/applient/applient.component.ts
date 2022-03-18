@@ -11,8 +11,8 @@ export class ApplientComponent implements OnInit {
   isEdit: boolean = false;
   options: FormGroup;
   countriesName:string[] = [];
-  selectedCountryName: string = '';
-  applient: any = new FormControl();
+  selectedCountryName: any = '';
+  applientForm!: FormGroup;
   floatLabelControl = new FormControl('auto');
 
   constructor(private fb: FormBuilder, private applientService: ApplientsService) {
@@ -25,7 +25,11 @@ export class ApplientComponent implements OnInit {
 
   }
   ngOnInit(): void {
-   
+    this.applientForm = this.fb.group({
+      name: [], 
+      email: [],
+      phone:[]
+    })
   }
 
 
