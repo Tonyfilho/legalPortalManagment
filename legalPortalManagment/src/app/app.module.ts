@@ -16,6 +16,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
+
+
 
 
 
@@ -26,6 +30,7 @@ import { AddApplientComponent } from '../app/applients/add-applient/add-applient
 
 import { MoongyGroupModule } from './moongy-group/moongy-group.module';
 import { AboutComponent } from './about/about.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,10 @@ import { AboutComponent } from './about/about.component';
     MatPaginatorModule,
     MatInputModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
     
     
   ],

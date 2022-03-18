@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 
@@ -27,7 +28,8 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatTabsModule,
     MatSidenavModule,
-    RouterModule
+    RouterModule, 
+    MatDatepickerModule
   ],
   exports:[
     MoongyGroupComponent,

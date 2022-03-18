@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ApplientsService } from '../applients.service';
 
 @Component({
   selector: 'app-applient',
@@ -9,14 +10,19 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 export class ApplientComponent implements OnInit {
   isEdit: boolean = false;
   options: FormGroup;
-  hideRequiredControl = new FormControl(false);
+  countriesName:string[] = [];
+  selectedCountryName: string = '';
+  applient: any = new FormControl();
   floatLabelControl = new FormControl('auto');
 
-  constructor(fb: FormBuilder) {
-    this.options = fb.group({
-      hideRequired: this.hideRequiredControl,
-      floatLabel: this.floatLabelControl,
-    });
+  constructor(private fb: FormBuilder, private applientService: ApplientsService) {
+    this.options = fb.group({ });
+   //serviço de paises 
+   this.applientService.getAllCountriesName().subscribe((data: any )=> {
+   Array.from(data).map((mapdata: any) =>  {this.countriesName.push(mapdata.name) })
+  
+  });
+
   }
   ngOnInit(): void {
    

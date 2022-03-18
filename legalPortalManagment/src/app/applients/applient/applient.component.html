@@ -10,7 +10,8 @@
           <button
             mat-icon-button
             class="example-icon material-icons"
-            aria-label="Example icon-button with heart icon" (click)="edit()"
+            aria-label="Example icon-button with heart icon"
+            (click)="edit()"
           >
             <span class="material-icons" style="cursor: pointer"
               >mode_edit</span
@@ -28,10 +29,10 @@
     </mat-grid-list>
     <!-- 1º Grid  nome e data de admissão -->
     <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1.5em">
-      <mat-grid-tile colspan="3">
+      <mat-grid-tile colspan="2">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -41,31 +42,59 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
-          <mat-label>Data de Admissão:</mat-label>
-          <input matInput />
-        </mat-form-field>
+          <mat-label>Data de Admissão</mat-label>
+          <input matInput [matDatepicker]="picker" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>        
       </mat-grid-tile>
+      <mat-grid-tile colspan="1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="outline"
+          color="primary"
+          style="width: 100%"
+        >
+          <!-- <mat-label>Pais:</mat-label>
+          <input matInput /> -->
+          <mat-label>Pais</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let pais of countriesName">
+              {{pais}}
+            </mat-option>
+          </mat-select>
+           </mat-form-field
+      ></mat-grid-tile>
+      
     </mat-grid-list>
     <!-- 2º Grid  Data de Nascimento Email: Telemovel: Naturalidade ....: -->
     <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1.5em">
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
-          <mat-label>Data de Nascimento:</mat-label>
-          <input matInput /> </mat-form-field
-      ></mat-grid-tile>
+          <!-- <mat-label>Data de Nascimento:</mat-label>
+          <input matInput /> -->
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput [matDatepicker]="birthDay">
+          <mat-datepicker-toggle matSuffix [for]="birthDay"></mat-datepicker-toggle>
+          <mat-datepicker #birthDay></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -75,7 +104,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -86,7 +115,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -97,7 +126,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -111,7 +140,7 @@
       <mat-grid-tile colspan="2">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -121,7 +150,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -132,7 +161,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -146,7 +175,7 @@
       <mat-grid-tile colspan="2">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -156,7 +185,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -167,7 +196,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -181,7 +210,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -191,7 +220,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -201,7 +230,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -211,7 +240,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -222,7 +251,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -236,7 +265,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -246,7 +275,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -257,7 +286,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -270,7 +299,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -280,7 +309,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >
@@ -291,7 +320,7 @@
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
-          appearance="fill"
+          appearance="outline"
           color="primary"
           style="width: 100%"
         >

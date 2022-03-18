@@ -295,10 +295,12 @@ export class ApplientsService {
 
   /** variaveis do serviço de compartilhamento de ID */
   private localId = new BehaviorSubject<number>(0);
-  serviceIdReturn = this.localId.asObservable();  
+  serviceIdReturn = this.localId.asObservable();
 
   constructor(private httpClient: HttpClient) {
-    this.localApplients$ = new Observable(data => {  data.next(this.localApplients)})
+    this.localApplients$ = new Observable((data) => {
+      data.next(this.localApplients);
+    });
   }
 
   getApplients() {
@@ -320,12 +322,16 @@ export class ApplientsService {
   }
 
   postUser(applient: IApplientClass) {
-     this.localApplients.push(applient);
+    this.localApplients.push(applient);
     return this.httpClient
       .post(
         `https://httpbin.org/post`, //URL dummy para testar sucess or error
         JSON.stringify(applient)
       )
       .pipe(take(1)); //JSON é uma API de JSON q o browser vai usar, o stringify é o metodo de conversão de Objeto JS / JSON.
+  }
+
+  getAllCountriesName() {
+    return this.httpClient.get(`https://restcountries.com/v2/all?fields=name`);
   }
 }
