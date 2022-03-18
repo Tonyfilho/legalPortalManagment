@@ -1,8 +1,20 @@
 <div class="main">
-  <form class="example-form">
+  <form class="form">
     <!-- 0º coluna  to ROOF-->
-    <mat-grid-list cols="4" rowHeight="5rem">
-      <mat-grid-tile colspan="4"> </mat-grid-tile>
+    <mat-grid-list cols="1" rowHeight="4rem"></mat-grid-list>
+    <!-- toolBar -->
+    <mat-grid-list cols="1" rowHeight="6rem">
+      <mat-grid-tile colspan="1">
+        <mat-toolbar>                  
+          <span class="spacer">Informações Sobre do Candidato</span>
+          <button mat-icon-button class="example-icon material-icons" aria-label="Example icon-button with heart icon">
+            <span class="material-icons">mode_edit</span>
+          </button>
+          <button mat-icon-button class="example-icon material-icons" aria-label="Example icon-button with share icon">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-toolbar>
+      </mat-grid-tile>
     </mat-grid-list>
     <!-- 1º Grid  nome e data de admissão -->
     <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1px">
@@ -154,8 +166,8 @@
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>
-     <!-- 5º Grid  Documentos de Portugal -->
-     <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1px">
+    <!-- 5º Grid  Documentos de Portugal -->
+    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1px">
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -209,8 +221,8 @@
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>
-     <!-- 5º Grid  Documentos de fora da União Europeia -->
-     <mat-grid-list cols="6" rowHeight="4.7rem" gutterSize="1px">
+    <!-- 5º Grid  Documentos de fora da União Europeia -->
+    <mat-grid-list cols="6" rowHeight="4.7rem" gutterSize="1px">
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -239,7 +251,9 @@
           color="primary"
           style="width: 100%"
         >
-          <mat-label>Data Emissão de A.R/I.E(Identificação Estrangeira):</mat-label>
+          <mat-label
+            >Data Emissão de A.R/I.E(Identificação Estrangeira):</mat-label
+          >
           <input matInput />
         </mat-form-field>
       </mat-grid-tile>
@@ -271,7 +285,7 @@
           color="primary"
           style="width: 100%"
         >
-          <mat-label>Data de  Expedição:</mat-label>
+          <mat-label>Data de Expedição:</mat-label>
           <input matInput />
         </mat-form-field>
       </mat-grid-tile>
