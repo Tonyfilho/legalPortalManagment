@@ -7,6 +7,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./applient.component.css'],
 })
 export class ApplientComponent implements OnInit {
+  isEdit: boolean = false;
   options: FormGroup;
   hideRequiredControl = new FormControl(false);
   floatLabelControl = new FormControl('auto');
@@ -19,5 +20,10 @@ export class ApplientComponent implements OnInit {
   }
   ngOnInit(): void {
    
+  }
+
+
+  edit(){
+   this.isEdit = true;
   }
 }
