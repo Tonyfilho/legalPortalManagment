@@ -16,6 +16,7 @@ export class ApplientsService {
       admissionDate: new Date(2022, 1, 7),
       birthDate: new Date(2000, 11, 7),
       phone: '918203555',
+      country: '',
       emergencyContactPhone: '916203875',
       emergencyContactName: 'debora',
       degreeOfkinShip: 'esposa',
@@ -51,6 +52,7 @@ export class ApplientsService {
       admissionDate: new Date(2000, 11, 7),
       birthDate: new Date(2000, 11, 7),
       phone: '918203784',
+      country: '',
       emergencyContactPhone: '916203875',
       emergencyContactName: 'debora',
       degreeOfkinShip: 'esposa',
@@ -86,6 +88,7 @@ export class ApplientsService {
       admissionDate: new Date(2000, 11, 7),
       birthDate: new Date(2000, 11, 7),
       phone: '918203754',
+      country: '',
       emergencyContactPhone: '916203875',
       emergencyContactName: 'debora',
       degreeOfkinShip: 'esposa',
@@ -121,6 +124,7 @@ export class ApplientsService {
       admissionDate: new Date(2000, 11, 7),
       birthDate: new Date(2000, 11, 7),
       phone: '9182037666',
+      country: '',
       emergencyContactPhone: '916203875',
       emergencyContactName: '',
       degreeOfkinShip: 'esposa',
@@ -156,6 +160,7 @@ export class ApplientsService {
       admissionDate: new Date(2000, 11, 7),
       birthDate: new Date(2000, 11, 7),
       phone: '9182037666',
+      country: '',
       emergencyContactPhone: '916203875',
       emergencyContactName: '',
       degreeOfkinShip: 'esposa',
@@ -191,6 +196,7 @@ export class ApplientsService {
       admissionDate: new Date(2000, 11, 7),
       birthDate: new Date(2000, 11, 7),
       phone: '9182037666',
+      country: '',
       emergencyContactPhone: '916203875',
       emergencyContactName: '',
       degreeOfkinShip: 'esposa',
@@ -226,6 +232,7 @@ export class ApplientsService {
       admissionDate: new Date(2000, 11, 7),
       birthDate: new Date(2000, 11, 7),
       phone: '9182037666',
+      country: '',
       emergencyContactPhone: '916203875',
       emergencyContactName: '',
       degreeOfkinShip: 'esposa',
@@ -261,6 +268,7 @@ export class ApplientsService {
       admissionDate: new Date(2000, 11, 7),
       birthDate: new Date(2000, 11, 7),
       phone: '9182037666',
+      country: '',
       emergencyContactPhone: '916203875',
       emergencyContactName: '',
       degreeOfkinShip: 'esposa',
@@ -332,6 +340,9 @@ export class ApplientsService {
   }
 
   getAllCountriesName() {
-    return this.httpClient.get(`https://restcountries.com/v2/all?fields=name`);
+    return this.httpClient.get(`https://restcountries.com/v2/all?fields=name`).pipe(take(1));
+  }
+  getCountrySelected(country: any) {
+    return this.httpClient.get(`https://restcountries.com/v2/name/${country}`).pipe(take(1));
   }
 }

@@ -5,6 +5,7 @@ export interface IApplientClass {
     admissionDate: Date;
     birthDate: Date;
     phone: string;
+    country: string;
     emergencyContactPhone: string;
     emergencyContactName: string;
     degreeOfkinShip: string;
