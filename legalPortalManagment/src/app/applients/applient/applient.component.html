@@ -47,31 +47,35 @@
           style="width: 100%"
         >
           <mat-label>Data de Admissão</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="admissionDate" />
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="admissionDate"
+          />
           <mat-datepicker-toggle
             matSuffix
             [for]="picker"
           ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>        
+        </mat-form-field>
       </mat-grid-tile>
-    
+
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
           appearance="outline"
           color="primary"
           style="width: 100%"
-        >         
+        >
           <mat-label>Pais</mat-label>
-          <mat-select  [(value)]="selectedCountryName" formControlName="country">
+          <mat-select [(value)]="selectedCountryName" formControlName="country">
             <mat-option>none</mat-option>
-            <mat-option *ngFor="let pais of countriesName" [value]="pais" >
-              {{pais}}
+            <mat-option *ngFor="let pais of countriesName" [value]="pais">
+              {{ pais }}
             </mat-option>
           </mat-select>
-           </mat-form-field
-      ></mat-grid-tile>
+        </mat-form-field></mat-grid-tile
+      >
       <!-- {{ selectedCountryName }} -->
     </mat-grid-list>
     <!-- 2º Grid  Data de Nascimento Email: Telemovel: Naturalidade ....: -->
@@ -82,10 +86,17 @@
           appearance="outline"
           color="primary"
           style="width: 100%"
-        >          
+        >
           <mat-label>Data de Nascimento</mat-label>
-          <input matInput [matDatepicker]="birthDay" formControlName="birthDate">
-          <mat-datepicker-toggle matSuffix [for]="birthDay"></mat-datepicker-toggle>
+          <input
+            matInput
+            [matDatepicker]="birthDay"
+            formControlName="birthDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="birthDay"
+          ></mat-datepicker-toggle>
           <mat-datepicker #birthDay></mat-datepicker>
         </mat-form-field>
       </mat-grid-tile>
@@ -96,19 +107,23 @@
           color="primary"
           style="width: 100%"
         >
-        <mat-label>Enter your email</mat-label>
-        <input matInput placeholder="seuEmail@example.com" formControlName="email">
-        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
-           </mat-form-field
-      ></mat-grid-tile>
+          <mat-label>Enter your email</mat-label>
+          <input
+            matInput
+            placeholder="seuEmail@example.com"
+            formControlName="email"
+          />
+          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field></mat-grid-tile
+      >
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
           appearance="outline"
           color="primary"
           style="width: 100%"
-        >          
-          <mat-label>Telemovel</mat-label>         
+        >
+          <mat-label>Telemovel</mat-label>
           <input matInput formControlName="phone" />
           <mat-icon matSuffix>phone</mat-icon>
           <!-- <mat-hint>Include area code</mat-hint> -->
@@ -146,9 +161,12 @@
           color="primary"
           style="width: 100%"
         >
+          <!-- hintLabel="Max 50 characters" -->
           <mat-label>Morada Completa</mat-label>
-          <input matInput /> </mat-form-field
-      ></mat-grid-tile>
+          <input matInput formControlName="address" #input maxlength="50" />
+          <!-- <mat-hint align="end">{{input.value?.length || 0}}- 50</mat-hint> -->
+        </mat-form-field></mat-grid-tile
+      >
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -157,7 +175,7 @@
           style="width: 100%"
         >
           <mat-label>Código Postal:</mat-label>
-          <input matInput />
+          <input matInput formControlName="zipeCode" />
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="1">
@@ -168,7 +186,7 @@
           style="width: 100%"
         >
           <mat-label>Localidade:</mat-label>
-          <input matInput />
+          <input matInput formControlName="locality" />
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>
@@ -182,19 +200,35 @@
           style="width: 100%"
         >
           <mat-label>Nome do Contacto de Emergencia:</mat-label>
-          <input matInput /> </mat-form-field
+          <input
+            matInput
+            formControlName="emergencyContactName"
+          /> </mat-form-field
       ></mat-grid-tile>
-      <mat-grid-tile colspan="1">
+
+      <mat-grid-tile colspan="1.2">
         <mat-form-field
           floatLabel="always"
           appearance="outline"
           color="primary"
-          style="width: 100%"
+          style="width: 30%"
+        >
+          <mat-label>Nº do Páis</mat-label>
+          <input matInput  />
+        </mat-form-field>
+        <mat-form-field
+          floatLabel="always"
+          appearance="outline"
+          color="primary"
+          style="width: 70%"
         >
           <mat-label>Telemóvel do Contacto de Emergencia:</mat-label>
-          <input matInput />
+          <input matInput formControlName="emergencyContactPhone" />
+          <mat-icon matSuffix>phone</mat-icon>
+          <mat-hint>Include area code</mat-hint>
         </mat-form-field>
       </mat-grid-tile>
+
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -203,7 +237,15 @@
           style="width: 100%"
         >
           <mat-label>Grau de parentesco do Contacto de Emergencia:</mat-label>
-          <input matInput />
+          <mat-select
+            [(value)]="selectedDegreeOfKinShip"
+            formControlName="emergencyDegreeOfkinShip"
+          >
+            <mat-option>none</mat-option>
+            <mat-option *ngFor="let item of degreeOfkinShip" [value]="item">
+              {{ item }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>

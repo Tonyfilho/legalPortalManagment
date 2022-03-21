@@ -1,19 +1,19 @@
 export interface IApplientClass {
     id: number;
     name: string;
-    email: string;
     admissionDate: Date;
-    birthDate: Date;
-    phone: string;
     country: string;
-    emergencyContactPhone: string;
-    emergencyContactName: string;
-    degreeOfkinShip: string;
+    birthDate: Date;
+    email: string;
+    phone: string;
     naturalness: string;
     nationality: string;
     address:string;
     zipeCode:string;
     locality:string;
+    emergencyContactName: string;
+    emergencyContactPhone: string;
+    emergencyDegreeOfkinShip: string;    
     documentNumber:string;
     documentValidityDate:Date;
     admissionPlace:string;

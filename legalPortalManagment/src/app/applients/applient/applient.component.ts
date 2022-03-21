@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ApplientsService } from '../applients.service';
 
@@ -14,7 +20,17 @@ export class ApplientComponent implements OnInit, OnChanges {
   selectedBirthdate: any;
   selectedAdmissionDate: any;
   applientForm!: FormGroup;
-  floatLabelControl = new FormControl('auto');
+  degreeOfkinShip: string[] = [
+    'Esposo',
+    'Esposa',
+    'Pai',
+    'Mae',
+    'Filho',
+    'Filha',
+    'Primos(a)',
+  ];
+  selectedDegreeOfKinShip: string = '';
+  emergencyDDD: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -26,29 +42,39 @@ export class ApplientComponent implements OnInit, OnChanges {
         this.countriesName.push(mapdata.name);
       });
     });
-  
   }
   ngOnInit(): void {
     this.applientForm = this.fb.group({
       name: [],
-      email: [],
       admissionDate: [],
-      birthDate:[],
+      country: [this.selectedCountryName],
+      birthDate: [],
+      email: [],
       phone: [],
-      country:[this.selectedCountryName],
-      naturalness:[],
-      nationality:[]
+      naturalness: [],
+      nationality: [],
+      address: [],
+      zipeCode: [],
+      locality: [],
+      emergencyContactName: [],
+      emergencyContactPhone: [],
+      emergencyDegreeOfkinShip: [],
     });
   }
   ngOnChanges(changes: SimpleChanges): void {
-      //serviço que busca a nacionalidade 
-      this.applientService.getCountrySelected(this.selectedCountryName).subscribe(data  => {})
-    //serviço que busca a nacionalidade 
-   this.applientService.getCountrySelected(this.selectedCountryName).subscribe(data  => { console.log(data)})
-   console.log(this.selectedAdmissionDate,'admission')
-      
+    //serviço que busca a nacionalidade
+    this.applientService
+      .getCountrySelected(this.selectedCountryName)
+      .subscribe((data) => {});
+    //serviço que busca a nacionalidade
+    this.applientService
+      .getCountrySelected(this.selectedCountryName)
+      .subscribe((data) => {
+        console.log(data);
+      });
+    console.log(this.selectedAdmissionDate, 'admission');
   }
-  
+
   edit() {
     this.isEdit = true;
   }
