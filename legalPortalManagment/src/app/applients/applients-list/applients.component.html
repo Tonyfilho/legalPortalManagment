@@ -1,58 +1,77 @@
 <div class="main" backgroundColor="primary">
-  <div class="filter">
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Filter" />
-    </mat-form-field>
-  </div>
+  <mat-grid-list cols="1" rowHeight="3rem">
+    <mat-grid-tile colspan="1">
+      <mat-toolbar>
+        <span class="spacer">Lista de Todos Candidatos</span>
+      </mat-toolbar>
+    </mat-grid-tile>
 
-  <div class="container mat-elevation-z8" backgroundColor="primary">
-    <mat-table [dataSource]="dataSource" matSort>
-      <!-- Progress Column -->
-      <ng-container matColumnDef="NomeCompleto">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Nome
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row">
-          <a [routerLink]="['/applient/', row['id']]">{{ row["name"] }}</a>
-        </mat-cell>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="Email">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Email
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row["email"] }} </mat-cell>
-      </ng-container>
-
-      <!-- Color Column -->
-      <ng-container matColumnDef="Telemovel">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Telemovel
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row["phone"] }}</mat-cell>
-      </ng-container>
-
-      <!-- Color Column -->
-      <ng-container matColumnDef="Nacionalidade">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Nacionalidade
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row"> {{ row?.nationality }}</mat-cell>
-      </ng-container>
-      <!-- Color Column -->
-      <ng-container matColumnDef="DataDeEntrada">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Data de Entrada
-        </mat-header-cell>
-        <mat-cell *matCellDef="let row">
-          {{ row.admissionDate | date: "dd-MM-YYYY" }}
-        </mat-cell>
-      </ng-container>
-
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
-    </mat-table>
-  </div>
-  <mat-paginator [pageSizeOptions]="[10, 20, 100]"></mat-paginator>
+    <!-- <mat-grid-list cols="1" rowHeight="1.5rem">
+    
+  </mat-grid-list> -->
+  </mat-grid-list>
+  <mat-grid-list cols="1" rowHeight="4rem">
+    <mat-grid-tile>
+      <div class="filter">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filter" />
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <!-- <mat-action-list  cols="1" rowHeight="50rem">
+    <mat-grid-tile> -->
+      <div class="container mat-elevation-z8" backgroundColor="primary">
+        <mat-table [dataSource]="dataSource" matSort>
+          <!-- Progress Column -->
+          <ng-container matColumnDef="NomeCompleto">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Nome
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <a [routerLink]="['/applient/', row['id']]">{{ row["name"] }}</a>
+            </mat-cell>
+          </ng-container>
+    
+          <!-- Name Column -->
+          <ng-container matColumnDef="Email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Email
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row["email"] }} </mat-cell>
+          </ng-container>
+    
+          <!-- Color Column -->
+          <ng-container matColumnDef="Telemovel">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Telemovel
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row["phone"] }}</mat-cell>
+          </ng-container>
+    
+          <!-- Color Column -->
+          <ng-container matColumnDef="Nacionalidade">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Nacionalidade
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row?.nationality }}</mat-cell>
+          </ng-container>
+          <!-- Color Column -->
+          <ng-container matColumnDef="DataDeEntrada">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>
+              Data de Entrada
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              {{ row.admissionDate | date: "dd-MM-YYYY" }}
+            </mat-cell>
+          </ng-container>
+    
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
+        </mat-table>
+      </div>
+      
+      <mat-paginator [pageSizeOptions]="[10, 20, 100]"></mat-paginator>
+    <!-- </mat-grid-tile>
+  </mat-action-list> -->
 </div>

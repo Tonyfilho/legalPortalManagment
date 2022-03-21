@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApplientsService } from '../applients.service';
 
 @Component({
   selector: 'app-add-applient',
@@ -7,97 +8,50 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-applient.component.css']
 })
 export class AddApplientComponent implements OnInit {
+  isEdit: boolean = false;
+  countriesName: string[] = [];
+  selectedCountryName: any = 'Portugal';
+  selectedBirthdate: any;
+  selectedAdmissionDate: any;
   applientForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+ 
+
+  constructor(
+    private fb: FormBuilder,
+    private applientService: ApplientsService
+  ) {
+    //serviço que pega todos os  paises
+    this.applientService.getAllCountriesName().subscribe((data: any) => {
+      Array.from(data).map((mapdata: any) => {
+        this.countriesName.push(mapdata.name);
+      });
+    });
+  
+  }
 
   ngOnInit(): void {
-    this.applientForm = this.formBuilder.group({
-      name: [
-        null,
-        [
-          Validators.required,
-          Validators.minLength(10),
-          Validators.maxLength(100),
-        ],
-      ],
-      username: [
-        null,
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(10),
-        ],
-      ],
-      phone: [
-        null,
-        [
-          Validators.required,
-          Validators.minLength(9),
-          Validators.maxLength(12),
-        ],
-      ],
-      email: [null, [Validators.required, Validators.email]],
-      address: this.formBuilder.group({
-        street: [
-          null,
-          [
-            Validators.required,
-            Validators.minLength(3),
-            Validators.maxLength(30),
-          ],
-        ],
-        suite: [
-          null,
-          [
-            Validators.required,
-            Validators.minLength(1),
-            Validators.maxLength(10),
-          ],
-        ],
-        city: [
-          null,
-          [
-            Validators.required,
-            Validators.minLength(2),
-            Validators.maxLength(30),
-          ],
-        ],
-        zipecode: [
-          null,
-          [
-            Validators.required,
-            Validators.minLength(7),
-            Validators.maxLength(7),
-          ],
-        ],
-      }),
-      company: this.formBuilder.group({
-        name: [
-          null,
-          [
-            Validators.required,
-            Validators.minLength(1),
-            Validators.maxLength(20),
-          ],
-        ],
-        catchphrase: [
-          null,
-          [
-            Validators.required,
-            Validators.minLength(1),
-            Validators.maxLength(20),
-          ],
-        ],
-        bs: [
-          null,
-          [
-            Validators.required,
-            Validators.minLength(1),
-            Validators.maxLength(20),
-          ],
-        ],
-      }),
+    this.applientForm = this.fb.group({
+      name: [],
+      email: [],
+      admissionDate: [],
+      birthDate:[],
+      phone: [],
+      country:[this.selectedCountryName],
+      naturalness:[],
+      nationality:[]
     });
+  }
+  ngOnChanges(): void {
+      //serviço que busca a nacionalidade 
+      this.applientService.getCountrySelected(this.selectedCountryName).subscribe(data  => {})
+    //serviço que busca a nacionalidade 
+   this.applientService.getCountrySelected(this.selectedCountryName).subscribe(data  => { console.log(data)})
+   console.log(this.selectedAdmissionDate,'admission')
+      
+  }
+  
+  edit() {
+    this.isEdit = true;
   }
 
 }
