@@ -6,7 +6,7 @@
     <mat-grid-list cols="1" rowHeight="6rem">
       <mat-grid-tile colspan="1">
         <mat-toolbar>
-          <span class="spacer">Informações Sobre do Candidato</span>
+          <span class="spacer">Applient Information</span>
           <button
             mat-icon-button
             class="example-icon material-icons"
@@ -28,7 +28,7 @@
       </mat-grid-tile>
     </mat-grid-list>
     <!-- 1º Grid  nome e data de admissão -->
-    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1.5em">
+    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1em">
       <mat-grid-tile colspan="2">
         <mat-form-field
           floatLabel="always"
@@ -59,7 +59,17 @@
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </mat-grid-tile>
-
+      <mat-grid-tile colspan="1">
+        <mat-form-field
+          floatLabel="always"
+          appearance="outline"
+          color="primary"
+          style="width: 100%"
+        >
+          <mat-label>Nacionalidade:</mat-label>
+          <input matInput formControlName="nationality" />
+        </mat-form-field>
+      </mat-grid-tile>
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -76,10 +86,10 @@
           </mat-select>
         </mat-form-field></mat-grid-tile
       >
-      <!-- {{ selectedCountryName }} -->
+     
     </mat-grid-list>
     <!-- 2º Grid  Data de Nascimento Email: Telemovel: Naturalidade ....: -->
-    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1.5em">
+    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1em">
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -116,17 +126,27 @@
           <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
         </mat-form-field></mat-grid-tile
       >
+   
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
           appearance="outline"
           color="primary"
-          style="width: 100%"
+          style="width: 30%"
         >
-          <mat-label>Telemovel</mat-label>
-          <input matInput formControlName="phone" />
+          <mat-label>Nº do Páis</mat-label>
+          <input matInput  />
+        </mat-form-field>
+        <mat-form-field
+          floatLabel="always"
+          appearance="outline"
+          color="primary"
+          style="width: 70%"
+        >
+          <mat-label>Telemovel:</mat-label>
+          <input matInput formControlName="phone"/>
           <mat-icon matSuffix>phone</mat-icon>
-          <!-- <mat-hint>Include area code</mat-hint> -->
+          <mat-hint>Include area code</mat-hint>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="1">
@@ -140,7 +160,7 @@
           <input matInput formControlName="naturalness" />
         </mat-form-field>
       </mat-grid-tile>
-      <mat-grid-tile colspan="1">
+      <!-- <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
           appearance="outline"
@@ -150,10 +170,10 @@
           <mat-label>Nacionalidade:</mat-label>
           <input matInput formControlName="nationality" />
         </mat-form-field>
-      </mat-grid-tile>
+      </mat-grid-tile> -->
     </mat-grid-list>
     <!-- 3º Grid  nome e data de admissão -->
-    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1.5em">
+    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1em">
       <mat-grid-tile colspan="2">
         <mat-form-field
           floatLabel="always"
@@ -191,7 +211,7 @@
       </mat-grid-tile>
     </mat-grid-list>
     <!-- 4º Grid  Contato de emergencia -->
-    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1.5em">
+    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1em">
       <mat-grid-tile colspan="2">
         <mat-form-field
           floatLabel="always"
@@ -206,7 +226,7 @@
           /> </mat-form-field
       ></mat-grid-tile>
 
-      <mat-grid-tile colspan="1.2">
+      <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
           appearance="outline"
@@ -250,7 +270,7 @@
       </mat-grid-tile>
     </mat-grid-list>
     <!-- 5º Grid  Documentos de Portugal -->
-    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1.5em">
+    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1em">
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -305,7 +325,7 @@
       </mat-grid-tile>
     </mat-grid-list>
     <!-- 6º Grid  Documentos de fora da União Europeia -->
-    <mat-grid-list cols="6" rowHeight="4.7rem" gutterSize="1.5em">
+    <mat-grid-list cols="6" rowHeight="4.7rem" gutterSize="1em">
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
