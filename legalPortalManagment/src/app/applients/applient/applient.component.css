@@ -1,21 +1,16 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-.main{
-  width: 86%;   
+.main {
   margin: auto;
-  margin-top:4%;
-  
 }
 
-.material-icons{ 
+.material-icons {
   margin-right: 2%;
 }
 
 .spacer {
   margin-left: 2%;
   flex: 1 1 auto;
-  
 }
-

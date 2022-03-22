@@ -5,8 +5,7 @@ a {
 .main {
   width: 100%;
   height: auto;
-  margin-top: 5% !important;
-  object-fit: contain !important;
+
 }
 
 .container {
