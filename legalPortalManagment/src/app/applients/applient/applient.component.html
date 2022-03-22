@@ -1,163 +1,161 @@
 <div class="main">
-  <form class="form" [formGroup]="applientForm" (submit)="sendApplientForm()">    
+  <!-- <div class="main-form"> -->
+  <form class="form" [formGroup]="applientForm" (submit)="sendApplientForm()">
     <mat-grid-list cols="1" rowHeight="4rem">
       <mat-grid-tile colspan="1">
         <mat-toolbar>
           <span class="spacer">Applient Information</span>
           <button
-            mat-icon-button
-            class="example-icon material-icons"
-            aria-label="Example icon-button with heart icon"
-            (click)="edit()"
+            mat-raised-button
+            color="primary"
+            routerLink="/applientsList"
+            style="margin-right: 0.8rem"
           >
-            <span class="material-icons" style="cursor: pointer"
-              >mode_edit</span
-            >
-          </button>
-          <button
-            mat-icon-button
-            class="example-icon material-icons"
-            aria-label="Example icon-button with share icon"
-          >
-            <span class="material-icons" style="cursor: pointer">delete</span>
+            GoBack
           </button>
         </mat-toolbar>
       </mat-grid-tile>
     </mat-grid-list>
-    <!-- 1º Grid  nome e data de admissão -->
-    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1.2em">
-      <mat-grid-tile colspan="2">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
+    <div class="main-form">
+      <mat-grid-list cols="1" rowHeight="1rem">
+        <mat-grid-tile></mat-grid-tile>
+      </mat-grid-list>
+      <!-- 1º Grid  nome e data de admissão -->
+      <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1em">
+        <mat-grid-tile colspan="2">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Nome Completo:</mat-label>
+            <input matInput formControlName="name" /> </mat-form-field
+        ></mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Data de Admissão</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              formControlName="admissionDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Nacionalidade:</mat-label>
+            <input matInput formControlName="nationality" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Pais</mat-label>
+            <mat-select
+              [(value)]="selectedCountryName"
+              formControlName="country"
+            >
+              <mat-option>none</mat-option>
+              <mat-option *ngFor="let pais of countriesName" [value]="pais">
+                {{ pais }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field></mat-grid-tile
         >
-          <mat-label>Nome Completo:</mat-label>
-          <input matInput formControlName="name" /> </mat-form-field
-      ></mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
+      </mat-grid-list>
+      <!-- 2º Grid  Data de Nascimento Email: Telemovel: Naturalidade ....: -->
+      <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1em">
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Data de Nascimento</mat-label>
+            <input
+              matInput
+              [matDatepicker]="birthDay"
+              formControlName="birthDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="birthDay"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #birthDay></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Enter your email</mat-label>
+            <input
+              matInput
+              placeholder="seuEmail@example.com"
+              formControlName="email"
+            />
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+          </mat-form-field></mat-grid-tile
         >
-          <mat-label>Data de Admissão</mat-label>
-          <input
-            matInput
-            [matDatepicker]="picker"
-            formControlName="admissionDate"
-          />
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="picker"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Nacionalidade:</mat-label>
-          <input matInput formControlName="nationality" />
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Pais</mat-label>
-          <mat-select [(value)]="selectedCountryName" formControlName="country">
-            <mat-option>none</mat-option>
-            <mat-option *ngFor="let pais of countriesName" [value]="pais">
-              {{ pais }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field></mat-grid-tile
-      >
-     
-    </mat-grid-list>
-    <!-- 2º Grid  Data de Nascimento Email: Telemovel: Naturalidade ....: -->
-    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1.2em">
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Data de Nascimento</mat-label>
-          <input
-            matInput
-            [matDatepicker]="birthDay"
-            formControlName="birthDate"
-          />
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="birthDay"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #birthDay></mat-datepicker>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Enter your email</mat-label>
-          <input
-            matInput
-            placeholder="seuEmail@example.com"
-            formControlName="email"
-          />
-          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
-        </mat-form-field></mat-grid-tile
-      >
-   
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 30%"
-        >
-          <mat-label>Nº do Páis</mat-label>
-          <input matInput formControlName="countryCode" />
-        </mat-form-field>
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 70%"
-        >
-          <mat-label>Telemovel:</mat-label>
-          <input matInput formControlName="phone"/>
-          <mat-icon matSuffix>phone</mat-icon>
-          <mat-hint>Include area code</mat-hint>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Naturalidade:</mat-label>
-          <input matInput formControlName="naturalness" />
-        </mat-form-field>
-      </mat-grid-tile>
-      <!-- <mat-grid-tile colspan="1">
+
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 30%"
+          >
+            <mat-label>Nº do Páis</mat-label>
+            <input matInput formControlName="countryCode" />
+          </mat-form-field>
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 70%"
+          >
+            <mat-label>Telemovel:</mat-label>
+            <input matInput formControlName="phone" />
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-hint>Include area code</mat-hint>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Naturalidade:</mat-label>
+            <input matInput formControlName="naturalness" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <!-- <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
           appearance="outline"
@@ -168,237 +166,256 @@
           <input matInput formControlName="nationality" />
         </mat-form-field>
       </mat-grid-tile> -->
-    </mat-grid-list>
-    <!-- 3º Grid  nome e data de admissão -->
-    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1.2em">
-      <mat-grid-tile colspan="2">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <!-- hintLabel="Max 50 characters" -->
-          <mat-label>Morada Completa</mat-label>
-          <input matInput formControlName="address" #input maxlength="50" />
-          <!-- <mat-hint align="end">{{input.value?.length || 0}}- 50</mat-hint> -->
-        </mat-form-field></mat-grid-tile
-      >
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Código Postal:</mat-label>
-          <input matInput formControlName="zipeCode" />
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Localidade:</mat-label>
-          <input matInput formControlName="locality" />
-        </mat-form-field>
-      </mat-grid-tile>
-    </mat-grid-list>
-    <!-- 4º Grid  Contato de emergencia -->
-    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1.2em">
-      <mat-grid-tile colspan="2">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Nome do Contacto de Emergencia:</mat-label>
-          <input
-            matInput
-            formControlName="emergencyContactName"
-          /> </mat-form-field
-      ></mat-grid-tile>
-
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 30%"
-          
-        >
-          <mat-label>Nº do Páis</mat-label>
-          <input matInput formControlName="emergencyCountryCode"/>
-        </mat-form-field>
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 70%"
-        >
-          <mat-label>Telemóvel do Contacto de Emergencia:</mat-label>
-          <input matInput formControlName="emergencyContactPhone" />
-          <mat-icon matSuffix>phone</mat-icon>
-          <mat-hint>Include area code</mat-hint>
-        </mat-form-field>
-      </mat-grid-tile>
-
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Grau de parentesco do Contacto de Emergencia:</mat-label>
-          <mat-select
-            [(value)]="selectedDegreeOfKinShip"
-            formControlName="emergencyDegreeOfkinShip"
+      </mat-grid-list>
+      <!-- 3º Grid  nome e data de admissão -->
+      <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1em">
+        <mat-grid-tile colspan="2">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
           >
-            <mat-option>none</mat-option>
-            <mat-option *ngFor="let item of degreeOfkinShip" [value]="item">
-              {{ item }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-grid-tile>
-    </mat-grid-list>
-    <!-- 5º Grid  Documentos de Portugal -->
-    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1.2em">
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
+            <!-- hintLabel="Max 50 characters" -->
+            <mat-label>Morada Completa</mat-label>
+            <input matInput formControlName="address" #input maxlength="50" />
+            <!-- <mat-hint align="end">{{input.value?.length || 0}}- 50</mat-hint> -->
+          </mat-form-field></mat-grid-tile
         >
-          <mat-label>Numero de Contribuinte:</mat-label>
-          <input matInput formControlName="vatNumber" /> </mat-form-field
-      ></mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Numero de Segurança Social:</mat-label>
-          <input matInput formControlName="socialSecurity" /> </mat-form-field
-      ></mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Numero de B.I ou C.C:</mat-label>
-          <input matInput  formControlName="documentNumber"/> </mat-form-field
-      ></mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Validade de B.I ou C.C:</mat-label>
-          <input matInput formControlName="documentValidityDate"/>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Data Emissão de B.I ou C.C:</mat-label>
-          <input matInput formControlName="documentExpeditionDate"/>
-        </mat-form-field>
-      </mat-grid-tile>
-    </mat-grid-list>
-    <!-- 6º Grid  Documentos de fora da União Europeia -->
-    <mat-grid-list cols="6" rowHeight="4.7rem" gutterSize="1.2em">
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>(NEU)Numero A.R/I.E(Identificação Estrangeira):</mat-label>
-          <input matInput formControlName="internationalID" /> </mat-form-field
-      ></mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Validade do A.R/I.E(Identificação Estrangeira):</mat-label>
-          <input matInput formControlName="internationalValidity" />
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label
-            >Data Emissão de A.R/I.E(Identificação Estrangeira):</mat-label
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
           >
-          <input matInput formControlName="internationalEmitDate" />
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>(NEU)Numero de Passaporte:</mat-label>
-          <input matInput formControlName="passportNumber" /> </mat-form-field
-      ></mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Validade do Passaporte:</mat-label>
-          <input matInput formControlName="passportValidity"/>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="1">
-        <mat-form-field
-          floatLabel="always"
-          appearance="outline"
-          color="primary"
-          style="width: 100%"
-        >
-          <mat-label>Data de Expedição:</mat-label>
-          <input matInput formControlName="passportExpeditionDate" />
-        </mat-form-field>
-      </mat-grid-tile>
-    </mat-grid-list>
-    <mat-grid-list cols="4" rowHeight="2rem" >
-      <mat-grid-tile colspan="1"></mat-grid-tile>
-      <mat-grid-tile colspan="1"></mat-grid-tile>
-      <mat-grid-tile colspan="1"></mat-grid-tile>
-      <mat-grid-tile colspan="1" >
-        <button mat-raised-button color="primary" [disabled]="this.applientForm.valid" style="margin-right: 0.5rem;">Save</button>
-        <button mat-raised-button color="warn" (click)="reset()">Cancel</button>
-      </mat-grid-tile>
-    </mat-grid-list>
+            <mat-label>Código Postal:</mat-label>
+            <input matInput formControlName="zipeCode" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Localidade:</mat-label>
+            <input matInput formControlName="locality" />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <!-- 4º Grid  Contato de emergencia -->
+      <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1em">
+        <mat-grid-tile colspan="2">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Nome do Contacto de Emergencia:</mat-label>
+            <input
+              matInput
+              formControlName="emergencyContactName"
+            /> </mat-form-field
+        ></mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 30%"
+          >
+            <mat-label>Nº do Páis</mat-label>
+            <input matInput formControlName="emergencyCountryCode" />
+          </mat-form-field>
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 70%"
+          >
+            <mat-label>Telemóvel do Contacto de Emergencia:</mat-label>
+            <input matInput formControlName="emergencyContactPhone" />
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-hint>Include area code</mat-hint>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Grau de parentesco do Contacto de Emergencia:</mat-label>
+            <mat-select
+              [(value)]="selectedDegreeOfKinShip"
+              formControlName="emergencyDegreeOfkinShip"
+            >
+              <mat-option>none</mat-option>
+              <mat-option *ngFor="let item of degreeOfkinShip" [value]="item">
+                {{ item }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <!-- 5º Grid  Documentos de Portugal -->
+      <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1em">
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Numero de Contribuinte:</mat-label>
+            <input matInput formControlName="vatNumber" /> </mat-form-field
+        ></mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Numero de Segurança Social:</mat-label>
+            <input matInput formControlName="socialSecurity" /> </mat-form-field
+        ></mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Numero de B.I ou C.C:</mat-label>
+            <input matInput formControlName="documentNumber" /> </mat-form-field
+        ></mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Validade de B.I ou C.C:</mat-label>
+            <input matInput formControlName="documentValidityDate" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Data Emissão de B.I ou C.C:</mat-label>
+            <input matInput formControlName="documentExpeditionDate" />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <!-- 6º Grid  Documentos de fora da União Europeia -->
+      <mat-grid-list cols="6" rowHeight="4.7rem" gutterSize="1em">
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label
+              >(NEU)Numero A.R/I.E(Identificação Estrangeira):</mat-label
+            >
+            <input
+              matInput
+              formControlName="internationalID"
+            /> </mat-form-field
+        ></mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label
+              >Validade do A.R/I.E(Identificação Estrangeira):</mat-label
+            >
+            <input matInput formControlName="internationalValidity" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label
+              >Data Emissão de A.R/I.E(Identificação Estrangeira):</mat-label
+            >
+            <input matInput formControlName="internationalEmitDate" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>(NEU)Numero de Passaporte:</mat-label>
+            <input matInput formControlName="passportNumber" /> </mat-form-field
+        ></mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Validade do Passaporte:</mat-label>
+            <input matInput formControlName="passportValidity" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <mat-form-field
+            floatLabel="always"
+            appearance="outline"
+            color="primary"
+            style="width: 100%"
+          >
+            <mat-label>Data de Expedição:</mat-label>
+            <input matInput formControlName="passportExpeditionDate" />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="4" rowHeight="2rem">
+        <mat-grid-tile colspan="1"></mat-grid-tile>
+        <mat-grid-tile colspan="1"></mat-grid-tile>
+        <mat-grid-tile colspan="1"></mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="this.applientForm.valid"
+            style="margin-right: 0.5rem"
+          >
+            Save
+          </button>
+          <button mat-raised-button color="warn" (click)="reset()">
+            Cancel
+          </button>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="1" rowHeight="2rem">
+        <mat-grid-tile colspan="1"></mat-grid-tile>
+      </mat-grid-list>
+    </div>
   </form>
 </div>

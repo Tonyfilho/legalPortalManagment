@@ -17,6 +17,7 @@ export class ApplientsComponent implements OnInit, AfterViewInit {
     'Telemovel',
     'Nacionalidade',
     'DataDeEntrada',
+    'Edit'
   ];
   dataSource!: MatTableDataSource<IApplientClass>;
 
