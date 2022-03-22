@@ -30,7 +30,6 @@ export class ApplientComponent implements OnInit, OnChanges {
     'Primos(a)',
   ];
   selectedDegreeOfKinShip: string = '';
-  emergencyDDD: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -50,6 +49,7 @@ export class ApplientComponent implements OnInit, OnChanges {
       country: [this.selectedCountryName],
       birthDate: [],
       email: [],
+      countryCode: [],
       phone: [],
       naturalness: [],
       nationality: [],
@@ -57,8 +57,23 @@ export class ApplientComponent implements OnInit, OnChanges {
       zipeCode: [],
       locality: [],
       emergencyContactName: [],
+      emergencyCountryCode: [],
       emergencyContactPhone: [],
       emergencyDegreeOfkinShip: [],
+      vatNumber: [],
+      socialSecurity: [],
+      documentNumber: [],
+      documentValidityDate: [],
+      documentExpeditionDate: [],
+      internationalID:[],
+      internationalValidity:[],
+      internationalEmitDate:[],
+      passportNumber:[],
+      passportValidity:[],
+      passportExpeditionDate:[],
+      
+
+
     });
   }
   ngOnChanges(changes: SimpleChanges): void {

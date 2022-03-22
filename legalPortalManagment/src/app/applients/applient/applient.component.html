@@ -28,7 +28,7 @@
       </mat-grid-tile>
     </mat-grid-list>
     <!-- 1º Grid  nome e data de admissão -->
-    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1em">
+    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1.2em">
       <mat-grid-tile colspan="2">
         <mat-form-field
           floatLabel="always"
@@ -89,7 +89,7 @@
      
     </mat-grid-list>
     <!-- 2º Grid  Data de Nascimento Email: Telemovel: Naturalidade ....: -->
-    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1em">
+    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1.2em">
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -135,7 +135,7 @@
           style="width: 30%"
         >
           <mat-label>Nº do Páis</mat-label>
-          <input matInput  />
+          <input matInput formControlName="countryCode" />
         </mat-form-field>
         <mat-form-field
           floatLabel="always"
@@ -173,7 +173,7 @@
       </mat-grid-tile> -->
     </mat-grid-list>
     <!-- 3º Grid  nome e data de admissão -->
-    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1em">
+    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1.2em">
       <mat-grid-tile colspan="2">
         <mat-form-field
           floatLabel="always"
@@ -211,7 +211,7 @@
       </mat-grid-tile>
     </mat-grid-list>
     <!-- 4º Grid  Contato de emergencia -->
-    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1em">
+    <mat-grid-list cols="4" rowHeight="4.7rem" gutterSize="1.2em">
       <mat-grid-tile colspan="2">
         <mat-form-field
           floatLabel="always"
@@ -232,9 +232,10 @@
           appearance="outline"
           color="primary"
           style="width: 30%"
+          
         >
           <mat-label>Nº do Páis</mat-label>
-          <input matInput  />
+          <input matInput formControlName="emergencyCountryCode"/>
         </mat-form-field>
         <mat-form-field
           floatLabel="always"
@@ -270,7 +271,7 @@
       </mat-grid-tile>
     </mat-grid-list>
     <!-- 5º Grid  Documentos de Portugal -->
-    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1em">
+    <mat-grid-list cols="5" rowHeight="4.7rem" gutterSize="1.2em">
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -279,7 +280,7 @@
           style="width: 100%"
         >
           <mat-label>Numero de Contribuinte:</mat-label>
-          <input matInput /> </mat-form-field
+          <input matInput formControlName="vatNumber" /> </mat-form-field
       ></mat-grid-tile>
       <mat-grid-tile colspan="1">
         <mat-form-field
@@ -289,7 +290,7 @@
           style="width: 100%"
         >
           <mat-label>Numero de Segurança Social:</mat-label>
-          <input matInput /> </mat-form-field
+          <input matInput formControlName="socialSecurity" /> </mat-form-field
       ></mat-grid-tile>
       <mat-grid-tile colspan="1">
         <mat-form-field
@@ -299,7 +300,7 @@
           style="width: 100%"
         >
           <mat-label>Numero de B.I ou C.C:</mat-label>
-          <input matInput /> </mat-form-field
+          <input matInput  formControlName="documentNumber"/> </mat-form-field
       ></mat-grid-tile>
       <mat-grid-tile colspan="1">
         <mat-form-field
@@ -309,7 +310,7 @@
           style="width: 100%"
         >
           <mat-label>Validade de B.I ou C.C:</mat-label>
-          <input matInput />
+          <input matInput formControlName="documentValidityDate"/>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="1">
@@ -320,12 +321,12 @@
           style="width: 100%"
         >
           <mat-label>Data Emissão de B.I ou C.C:</mat-label>
-          <input matInput />
+          <input matInput formControlName="documentExpeditionDate"/>
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>
     <!-- 6º Grid  Documentos de fora da União Europeia -->
-    <mat-grid-list cols="6" rowHeight="4.7rem" gutterSize="1em">
+    <mat-grid-list cols="6" rowHeight="4.7rem" gutterSize="1.2em">
       <mat-grid-tile colspan="1">
         <mat-form-field
           floatLabel="always"
@@ -334,7 +335,7 @@
           style="width: 100%"
         >
           <mat-label>(NEU)Numero A.R/I.E(Identificação Estrangeira):</mat-label>
-          <input matInput /> </mat-form-field
+          <input matInput formControlName="internationalID" /> </mat-form-field
       ></mat-grid-tile>
       <mat-grid-tile colspan="1">
         <mat-form-field
@@ -344,7 +345,7 @@
           style="width: 100%"
         >
           <mat-label>Validade do A.R/I.E(Identificação Estrangeira):</mat-label>
-          <input matInput />
+          <input matInput formControlName="internationalValidity" />
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="1">
@@ -357,7 +358,7 @@
           <mat-label
             >Data Emissão de A.R/I.E(Identificação Estrangeira):</mat-label
           >
-          <input matInput />
+          <input matInput formControlName="internationalEmitDate" />
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="1">
@@ -368,7 +369,7 @@
           style="width: 100%"
         >
           <mat-label>(NEU)Numero de Passaporte:</mat-label>
-          <input matInput /> </mat-form-field
+          <input matInput formControlName="passportNumber" /> </mat-form-field
       ></mat-grid-tile>
       <mat-grid-tile colspan="1">
         <mat-form-field
@@ -378,7 +379,7 @@
           style="width: 100%"
         >
           <mat-label>Validade do Passaporte:</mat-label>
-          <input matInput />
+          <input matInput formControlName="passportValidity"/>
         </mat-form-field>
       </mat-grid-tile>
       <mat-grid-tile colspan="1">
@@ -389,7 +390,7 @@
           style="width: 100%"
         >
           <mat-label>Data de Expedição:</mat-label>
-          <input matInput />
+          <input matInput formControlName="passportExpeditionDate" />
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>

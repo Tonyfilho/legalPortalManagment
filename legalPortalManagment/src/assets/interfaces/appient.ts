@@ -14,17 +14,19 @@ export interface IApplientClass {
     emergencyContactName: string;
     emergencyContactPhone: string;
     emergencyDegreeOfkinShip: string;    
+    vatNumber:string;
+    socialSecurity:string;
     documentNumber:string;
     documentValidityDate:Date;
-    admissionPlace:string;
+    documentExpeditionDate:Date;
     internationalID:string;
     internationalValidity:string;
     internationalEmitDate:string;
     passportNumber:string;
     passportValidity:string;
     passportExpeditionDate:Date;
-    vatNumber:string;
-    socialSecurity:string;
+    // não feito daqui para baixo
+    admissionPlace:string;
     maritalStatus:string;
     numberOfDependents:number;
     bankName:string;
@@ -52,6 +54,7 @@ export class ApplientClass {
     locality!:string;
     documentNumber!:string;
     documentValidityDate!:Date;
+    documentExpeditionDate!:Date;
     admissionPlace!:string;
     internationalID!:string;
     internationalValidity!:string;
