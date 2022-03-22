@@ -1,5 +1,5 @@
 <div class="main">
-  <form class="form" [formGroup]="applientForm">
+  <form class="form" [formGroup]="applientForm" (submit)="sendApplientForm()">
     <!-- 0º coluna  to ROOF-->
     <mat-grid-list cols="1" rowHeight="4rem"></mat-grid-list>
     <!-- toolBar -->
@@ -392,6 +392,15 @@
           <mat-label>Data de Expedição:</mat-label>
           <input matInput formControlName="passportExpeditionDate" />
         </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="4" rowHeight="2rem" >
+      <mat-grid-tile colspan="1"></mat-grid-tile>
+      <mat-grid-tile colspan="1"></mat-grid-tile>
+      <mat-grid-tile colspan="1"></mat-grid-tile>
+      <mat-grid-tile colspan="1" >
+        <button mat-raised-button color="primary" [disabled]="this.applientForm.valid" style="margin-right: 0.5rem;">Save</button>
+        <button mat-raised-button color="warn" (click)="reset()">Cancel</button>
       </mat-grid-tile>
     </mat-grid-list>
   </form>

@@ -76,7 +76,7 @@ export class ApplientComponent implements OnInit, OnChanges {
 
     });
   }
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     //serviço que busca a nacionalidade
     this.applientService
       .getCountrySelected(this.selectedCountryName)
@@ -87,9 +87,15 @@ export class ApplientComponent implements OnInit, OnChanges {
       .subscribe((data) => {
         console.log(data);
       });
-    console.log(this.selectedAdmissionDate, 'admission');
+    
   }
-
+  sendApplientForm(){
+    // irá receber o serviço post
+    console.log(this.applientForm.value)
+  }
+  reset(){
+    this.applientForm.reset();
+  }
   edit() {
     this.isEdit = true;
   }
