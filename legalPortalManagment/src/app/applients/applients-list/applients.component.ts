@@ -19,17 +19,40 @@ export class ApplientsComponent implements OnInit, AfterViewInit {
     'DataDeEntrada',
     'Edit'
   ];
+  listaDeNome = 'uma listaaaaaaaaaaaaaaaaaaaaaa de nomes com o maior de todooooooooooos no mundo';
   dataSource!: MatTableDataSource<IApplientClass>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private applientService: ApplientsService) {}
-
+ 
   ngOnInit(): void {
     this.applientService.localApplients$.subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);    
     });
+
+    /**Codigo para retornar o maior de uma string */
+    const maior = this.listaDeNome.split(' ').reduce((novo, atual, i) => {
+      if(novo.length < atual.length) { return atual};        
+      return novo
+    }, ' ');
+    
+    /**Codigo para retornar o menor de uma string */
+    const menor = this.listaDeNome.split(' ').reduce((novo, atual)=> {     
+     if(novo.length < atual.length) { return novo; };
+     return atual;
+    }, ' ');
+    const menor2 = this.displayedColumns.reduce((novo, atual:any)=> {     
+     if(novo.length < atual.length) { return novo; };
+     return atual;
+    },"tenho que escrever um string de return caso contrario ele retorna vazio, ou não retornar nada, sem retorno" );
+ 
+    console.log('O maior: ',maior);
+    console.log('O menor: ',menor);
+    console.log('O menor: ',menor2);
+
+
   }
 
   /**
